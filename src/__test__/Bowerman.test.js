@@ -1,10 +1,10 @@
 import Character from "../js/Bowerman";
 
 test('object', () => {
-    const character = new Character('Hero', 'Bowman');
+    const character = new Character('Hero', 'Bowerman');
     const result = {
         name: 'Hero',
-        type: 'Bowman',
+        type: 'Bowerman',
         health: 100,
         level: 1,
         attack: 25,

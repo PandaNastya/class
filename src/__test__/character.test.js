@@ -1,22 +1,22 @@
 import Character from "../js/character";
 
 test('length name < 2', () => {
-    expect(() => new Character('z', 'Zombie')).toThrowError(new Error('Ошибка!'));
+    expect(() => new Character('z', 'Zombie')).toThrowError(new Error('Неправильная длина имени'));
 });
 
 test('length name > 10', () => {
-    expect(() => new Character('megatestname', 'Zombie')).toThrowError(new Error('Ошибка!'));
+    expect(() => new Character('megatestname', 'Zombie')).toThrowError(new Error('Неправильная длина имени'));
 });
 
 test('wrong type', () => {
-    expect(() => new Character('testname', 'Archer')).toThrowError(new Error('Ошибка!'));
+    expect(() => new Character('testname', 'Archer')).toThrowError(new Error('Такого класса нет'));
 });
 
 test('object', () => {
-    const character = new Character('Hero', 'Bowman');
+    const character = new Character('Hero', 'Magician');
     const result = {
         name: 'Hero',
-        type: 'Bowman',
+        type: 'Magician',
         health: 100,
         level: 1,
         attack: undefined,
@@ -28,7 +28,7 @@ test('object', () => {
 test('health = 0 to levelUp', () => {
     const character = new Character('Hero', 'Magician');
     character.health = 0;
-    expect(() => character.levelUp()).toThrowError(new Error('Герой умер'));
+    expect(() => character.levelUp()).toThrowError(new Error('Нельзя повысить уровень, умер'));
 });
 
 test('levelUp', () => {

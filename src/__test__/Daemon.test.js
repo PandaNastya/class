@@ -4,7 +4,7 @@ test('object', () => {
     const character = new Character('Hero', 'Daemon');
     const result = {
         name: 'Hero',
-        type: 'Bowman',
+        type: 'Daemon',
         health: 100,
         level: 1,
         attack: 10,

@@ -1,13 +1,13 @@
 export default class Character {
     constructor (name, type) {
         if (name.length < 2 || name.length > 10) {
-            throw new Error('Ошибка!');
+            throw new Error('Неправильная длина имени');
         }else {
             this.name = name;
         }
-        const types = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
+        const types = ['Bowerman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
         if (!types.includes(type)) {
-            throw new Error('Ошибка!');
+            throw new Error('Такого класса нет');
         } else {
             this.type = type;
         }
@@ -23,7 +23,7 @@ export default class Character {
             this.defence *= 1.2;
             this.health = 100;
         } else {
-            throw new Error('герой умер');
+            throw new Error('Нельзя повысить уровень, умер');
         }
     }
     damage(points) {
